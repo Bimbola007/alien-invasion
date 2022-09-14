@@ -1,0 +1,24 @@
+Index: ship.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import pygame\r\n\r\n\r\nclass Ship:\r\n    \"\"\"create a ship\"\"\"\r\n\r\n    def __init__(self , ai):\r\n        \"\"\"initialize the ship and set its position\"\"\"\r\n        self.screen = ai.screen\r\n        self.get_screen_rect = ai.screen.get_rect()\r\n\r\n        #load the image and get its surface rect\r\n        self.imagee = pygame.image.load('images/ship.bmp')\r\n        self.get_image_rect = self.imagee.get_rect()\r\n        # make all new ships be formed at the mid bottom of the screen\r\n        self.get_screen_rect.centerx = self.get_screen_rect.centerx\r\n        self.get_screen_rect.bottom = self.get_screen_rect.bottom - 5\r\n        #self.screen_rect = self.get_image_rect.midbottom\r\n\r\n\r\n\r\n    def blitme(self):\r\n        \"\"\"draw the image at the current location\"\"\"\r\n        self.screen.blit(self.imagee, self.get_image_rect)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/ship.py b/ship.py
+--- a/ship.py	(revision ca4e3a21a0cf5018a85535c2c8d6cc7574f5bd3a)
++++ b/ship.py	(date 1663153945713)
+@@ -13,9 +13,10 @@
+         self.imagee = pygame.image.load('images/ship.bmp')
+         self.get_image_rect = self.imagee.get_rect()
+         # make all new ships be formed at the mid bottom of the screen
+-        self.get_screen_rect.centerx = self.get_screen_rect.centerx
+-        self.get_screen_rect.bottom = self.get_screen_rect.bottom - 5
+-        #self.screen_rect = self.get_image_rect.midbottom
++        #self.get_screen_rect.centerx = self.get_screen_rect.centerx
++        #self.get_screen_rect.bottom = self.get_screen_rect.bottom - 5
++
++        self.screen_rect = self.get_image_rect.midbottom
+ 
+ 
+ 
