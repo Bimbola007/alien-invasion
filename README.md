@@ -1,1 +1,2 @@
-all files added check the ship.py file that is where the ship code is written
+updates about the game
+Made the ship to be able to move in 4 directions
