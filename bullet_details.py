@@ -9,14 +9,17 @@ class Bullets(Sprite):
         super().__init__()
         self.screen = ai.screen
         self.settings = ai.setting
-        self.color =  self.settings.bullet_color
+        self.color = self.settings.bullet_color
+
 
         # create a bullet rect and fix it just above the ship
         self.bullet_rect = pygame.Rect(0,0, self.settings.bullet_width , self.settings.bullet_height)
         self.bullet_rect.midtop = ai.ship.get_image_rect.midtop
 
+
         # Store the bullet's position as a decimal value.
         self.y = float(self.bullet_rect.y)
+
 
     def update(self):
         """move the bullet up the screen"""
